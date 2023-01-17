@@ -8,7 +8,7 @@ import subprocess
 def download_l3():
     """
     Function to download Level 3 soil moisture data from NASA LPRM AMSR2 DS for current month. 
-    Keeps track of files already downloaded in downloaded.txt
+    Keeps track of files already downloaded in downloaded_l3.txt
     """
 
     # Generating links

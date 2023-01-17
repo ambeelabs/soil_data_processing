@@ -4,6 +4,7 @@ from soil_processing import process_soil
 import glob
 import os
 
+
 def process_l2(
     save=False,
     subset_cols=["ts", "soil_moisture_c1"],
@@ -11,6 +12,15 @@ def process_l2(
     client_name="localhost",
     ttl=True,
 ):
+    """
+    Download and process l2 soil data
+    Args:
+    save: saves the processed data to csv if True,
+    subset_cols: columns to subset for dropna,
+    push_mongo: pushes to mongodb if True,
+    client_name: name/url for mongodb, localhost by default,
+    ttl: sets time to live for datetime index if True
+    """
     download_l2()
     files = glob.glob("*.nc4")
     for file in files:
@@ -35,6 +45,15 @@ def process_l3(
     client_name="localhost",
     ttl=True,
 ):
+    """
+    Download and process l3 soil data
+    Args:
+    save: saves the processed data to csv if True,
+    subset_cols: columns to subset for dropna,
+    push_mongo: pushes to mongodb if True,
+    client_name: name/url for mongodb, localhost by default,
+    ttl: sets time to live for datetime index if True
+    """
     download_l3()
     files = glob.glob("*.nc4")
     for file in files:
