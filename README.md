@@ -6,6 +6,9 @@ You can save the processed data to a csv file or you can push it to mongodb(loca
 ### How do I get set up? ###
 
 * Install packages from requirements.txt
+  ```
+  pip3 install -r requirements.txt
+  ``` 
 * Install external dependency for shapely in case of error https://shapely.readthedocs.io/en/stable/installation.html
 * Dependencies
 
