@@ -59,6 +59,6 @@ for file in files:
 ```
 
 ### Note ###
-Processing L2 data takes more time than L3 but L2 data is updated faster from NASA than L3
-Dataset Documentation: https://hydro1.gesdisc.eosdis.nasa.gov/data/WAOB/LPRM_AMSR2_DS_D_SOILM3.001/doc/README_LPRM.pdf
-Dataset Landing Page: https://disc.gsfc.nasa.gov/datasets/LPRM_AMSR2_DS_D_SOILM3_001/summary
+* Processing L2 data takes more time than L3 but L2 data is updated faster from NASA than L3
+* Dataset Documentation: https://hydro1.gesdisc.eosdis.nasa.gov/data/WAOB/LPRM_AMSR2_DS_D_SOILM3.001/doc/README_LPRM.pdf
+* Dataset Landing Page: https://disc.gsfc.nasa.gov/datasets/LPRM_AMSR2_DS_D_SOILM3_001/summary
