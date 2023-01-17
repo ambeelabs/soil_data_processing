@@ -16,7 +16,7 @@ def process_soil(
     """
     Function to process soil data from NASA LPRM AMSR2 satellite.
 
-    Args:
+    params:
     filename: name of the .nc4 file
     save: saves the dataframe in csv file if True
     subset_cols: columns to subset for dropna

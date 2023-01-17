@@ -3,7 +3,7 @@ import requests
 import re
 import subprocess
 from pprint import pprint
-
+from config import base_url_l3
 
 def download_yearly(year):
     """
@@ -12,9 +12,7 @@ def download_yearly(year):
     Args:
     year: year in string
     """
-    base_url = (
-        "https://hydro1.gesdisc.eosdis.nasa.gov/data/WAOB/LPRM_AMSR2_DS_A_SOILM3.001/"
-    )
+    base_url = base_url_l3
     months = [f"{i:02d}" for i in range(1, 13)]
     year = str(year)
     base_urls = []

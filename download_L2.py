@@ -3,19 +3,18 @@ from bs4 import BeautifulSoup
 import requests
 import re
 import subprocess
+from config import base_url_l2
 
 
 def download_l2():
     """
-    Function to download Level 2 soil moisture data from NASA LPRM AMSR2 DS for current day. 
+    Function to download Level 2 soil moisture data from NASA LPRM AMSR2 DS for current day.
     Keeps track of files already downloaded in downloaded_l2.txt
     Keeps track of days already processsed in {year}_doys.txt
     """
 
     # Generating links to be downloaded
-    base_url = (
-        "https://hydro1.gesdisc.eosdis.nasa.gov/data/WAOB/LPRM_AMSR2_DS_SOILM2.001/"
-    )
+    base_url = base_url_l2
     d = datetime.datetime.now()
     year = str(d.year)
     base_url = base_url + year + "/"

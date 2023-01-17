@@ -1,3 +1,6 @@
+'''
+Combines downloading and processing for L2 and L3
+'''
 from download_L2 import download_l2
 from download_L3 import download_l3
 from soil_processing import process_soil
@@ -14,7 +17,7 @@ def process_l2(
 ):
     """
     Download and process l2 soil data
-    Args:
+    params:
     save: saves the processed data to csv if True,
     subset_cols: columns to subset for dropna,
     push_mongo: pushes to mongodb if True,
@@ -47,7 +50,7 @@ def process_l3(
 ):
     """
     Download and process l3 soil data
-    Args:
+    params:
     save: saves the processed data to csv if True,
     subset_cols: columns to subset for dropna,
     push_mongo: pushes to mongodb if True,

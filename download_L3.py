@@ -3,18 +3,17 @@ from bs4 import BeautifulSoup
 import requests
 import re
 import subprocess
+from config import base_url_l3
 
 
 def download_l3():
     """
-    Function to download Level 3 soil moisture data from NASA LPRM AMSR2 DS for current month. 
+    Function to download Level 3 soil moisture data from NASA LPRM AMSR2 DS for current month.
     Keeps track of files already downloaded in downloaded_l3.txt
     """
 
     # Generating links
-    base_url = (
-        "https://hydro1.gesdisc.eosdis.nasa.gov/data/WAOB/LPRM_AMSR2_DS_A_SOILM3.001/"
-    )
+    base_url = base_url_l3
     d = datetime.datetime.now()
     year = str(d.year)
     month = f"{d:%m}"
@@ -35,24 +34,12 @@ def download_l3():
         lmonth = f"{last:%m}"
         lday = f"{last:%d}"
         print(lmonth, lday)
-        last_url = (
-            "https://hydro1.gesdisc.eosdis.nasa.gov/data/WAOB/LPRM_AMSR2_DS_A_SOILM3.001/"
-            + year
-            + "/"
-            + lmonth
-            + "/"
-        )
+        last_url = base_url + year + "/" + lmonth + "/"
         print(last_url)
         if month == "01":
             lyear = str(last.year)
             print(lyear)
-            last_url = (
-                "https://hydro1.gesdisc.eosdis.nasa.gov/data/WAOB/LPRM_AMSR2_DS_A_SOILM3.001/"
-                + lyear
-                + "/"
-                + lmonth
-                + "/"
-            )
+            last_url = base_url + lyear + "/" + lmonth + "/"
         page = requests.get(last_url).text
         soup = BeautifulSoup(page, "html.parser")
         oldlinks = soup.find_all("a")
@@ -81,7 +68,7 @@ def download_l3():
             urls = "\n".join(links)
             f.write(urls)
             f.write("\n")
-    #downloading files
+    # downloading files
     try:
         for i in links:
             command = (
