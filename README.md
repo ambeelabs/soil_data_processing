@@ -35,7 +35,7 @@ download_l2()
 
 #### Download Level 3 data ####
 ```
-from download_L2 import download_l3
+from download_L3 import download_l3
 
 download_l3()
 ```
